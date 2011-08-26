@@ -88,6 +88,18 @@
             </snapshots>
         </repository>
     </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <distributionManagement>
         <repository>
@@ -100,7 +112,7 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <site>
-            <id>jclouds-googlecode-site</id>
+            <id>jclouds-github-pages-site</id>
             <url>${maven.site.url.base}/${project.version}</url>
         </site>
     </distributionManagement>
@@ -179,7 +191,7 @@
         <maven.compile.target>1.6</maven.compile.target>
         <maven.compile.optimize>true</maven.compile.optimize>
         <maven.compile.deprecation>true</maven.compile.deprecation>
-        <maven.site.url.base>davs://jclouds.googlecode.com/svn/maven-sites</maven.site.url.base>
+        <maven.site.url.base>gitsite:git@github.com/demobox/jclouds-maven-site.git</maven.site.url.base>
         <http.proxyHost />
         <http.proxyPort />
         <jclouds.wire.httpstream.url>http://apache.opensourceresources.org/commons/logging/binaries/commons-logging-1.1.1-bin.tar.gz</jclouds.wire.httpstream.url>
@@ -508,9 +520,9 @@ pageTracker._trackPageview();
                     </configuration>
                     <dependencies>
                         <dependency>
-                            <groupId>org.apache.maven.wagon</groupId>
-                            <artifactId>wagon-webdav-jackrabbit</artifactId>
-                            <version>1.0-WAGON-319.328</version>
+                            <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+                            <artifactId>wagon-gitsite</artifactId>
+                            <version>0.4-SNAPSHOT</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -927,7 +939,7 @@ pageTracker._trackPageview();
             <!-- Maven generates incorrect links without the <site> declaration here -->
             <distributionManagement>
                 <site>
-                    <id>jclouds-googlecode-site</id>
+                    <id>jclouds-github-pages-site</id>
                     <url>${maven.site.url.base}/${project.version}/${project.artifactId}</url>
                 </site>
             </distributionManagement>
